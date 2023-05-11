@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello World</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <p>Welcome to my first HTML page!</p>
-  </body>
+<head>
+  <title>重定向页面</title>
+  <script>
+    // 检测用户代理并重定向到不同链接
+    function redirectBasedOnUserAgent() {
+      var userAgent = navigator.userAgent.toLowerCase();
+
+      if (userAgent.indexOf('android') !== -1) {
+        // Android设备
+        window.location.href = 'android.html';
+      } else if (/(iphone|ipad|ipod|ios)/i.test(userAgent)) {
+        // iOS设备
+        window.location.href = 'ios.html';
+      } else {
+        // 其他设备，默认重定向到PC端页面
+        window.location.href = 'pc.html';
+      }
+    }
+  </script>
+</head>
+<body onload="redirectBasedOnUserAgent()">
+  <h1>重定向页面</h1>
+  <p>正在为您重定向到适合您的设备的页面...</p>
+</body>
 </html>
