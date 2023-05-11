@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PC页面</title>
+    <meta charset="UTF-8">
+    <title>快学Flutter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .blue-button {
+            color: white;
+            background-color: rgb(14, 111, 149);
+        }
+
+        .green-button {
+            color: white;
+            background-color: green;
+        }
+        /* 给p 添加间距 */
+        p {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>欢迎访问PC页面</h1>
-  <p>这是PC设备访问的页面。</p>
+    <h1>快学Flutter</h1>
+    <p>快学Flutter是一个专注于编码技术和科技探索的社区平台，致力于打造一个轻松、有趣、丰富的编码学习和科技交流环境。在快学Flutter里，你可以与志同道合的小伙伴分享编码技巧和经验，发现最新科技动态和趋势，感受科技带来的美好生活。</p>
+    <div class="button-container">
+        <button class="button blue-button" onclick="window.location.href='https://wx.zsxq.com/dweb2/index/group/88885828188252'">加入知识星球</button>
+        <button class="button green-button" onclick="window.location.href='https://pc.fenchuan8.com/#/index?forum=35642&yqm=66I5'">加入纷传圈子</button>
+    </div>
 </body>
 </html>
