@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>快学Flutter</title>
+  <meta charset="UTF-8">
+  <title>居中显示图片并添加文字</title>
   <style>
     body {
       display: flex;
@@ -21,23 +22,20 @@
       max-width: 100%;
       height: auto;
     }
-
     .text-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 36px;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ 
+      font: 700 2.5em/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #000000;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     }
+
+    
   </style>
 </head>
 <body>
   <div class="image-container">
+    <p class="text-overlay">长按下图【识别小程序】</p>
     <img src="a.jpg" alt="图片">
-    <div class="text-overlay">长按小程序码识别</div>
   </div>
 </body>
 </html>
