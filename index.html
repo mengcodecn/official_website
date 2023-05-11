@@ -46,7 +46,7 @@
       if (typeof wx !== 'undefined' && wx.miniProgram && wx.miniProgram.navigateTo) {
         wx.miniProgram.navigateTo({
           appId: appId,
-          path: '/pages/index/index',
+          path: 'pages/index/index', // 替换为小程序首页的路径
           success: function () {
             console.log('成功跳转至微信小程序');
           },
@@ -62,6 +62,7 @@
         window.location.href = 'fallback.html';
       }
     }
+
   </script>
 </head>
 
