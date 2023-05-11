@@ -2,6 +2,36 @@
 <html>
 <head>
   <title>重定向页面</title>
+  <style>
+     body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #4CAF50;
+      animation: progress 3s ease-in-out infinite;
+    }
+
+    @keyframes progress {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
+    }
+  </style>
   <script>
     // 检测用户代理并重定向到不同链接
     function redirectBasedOnUserAgent() {
@@ -39,7 +69,8 @@
   </script>
 </head>
 <body onload="redirectBasedOnUserAgent()">
-  <h1>重定向页面</h1>
-  <p>正在为您重定向到适合您的设备和浏览器的页面...</p>
+  <div class="progress-bar">
+    <div class="progress-bar-fill"></div>
+  </div>
 </body>
 </html>
