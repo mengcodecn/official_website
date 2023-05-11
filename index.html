@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>重定向页面</title>
-  <!-- 引入微信小程序的JS SDK -->
-  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
-
   <script>
     // 检测用户代理并重定向到不同链接
     function redirectBasedOnUserAgent() {
@@ -15,7 +11,7 @@
         // iOS设备
         if (userAgent.indexOf('micromessenger') !== -1) {
           // 微信端
-          redirectToMiniProgram('wxbd8aeec99c1b1cde');
+          window.location.href = 'wechat.html';
         } else {
           // 非微信端
           window.location.href = 'https://mengcode-6g984ohffd5d07b1-1317847224.tcloudbaseapp.com/jump-mp.html';
@@ -24,7 +20,7 @@
         // Android设备
         if (userAgent.indexOf('micromessenger') !== -1) {
           // 微信端
-          redirectToMiniProgram('wxbd8aeec99c1b1cde');
+          window.location.href = 'wechat.html';
         } else {
           // 非微信端
           window.location.href = 'https://mengcode-6g984ohffd5d07b1-1317847224.tcloudbaseapp.com/jump-mp.html';
@@ -33,45 +29,17 @@
         // PC端
         if (userAgent.indexOf('micromessenger') !== -1) {
           // 微信端
-          redirectToMiniProgram('wxbd8aeec99c1b1cde');
+          window.location.href = 'wechat.html';
         } else {
           // 非微信端
           window.location.href = 'pc.html';
         }
       }
     }
-
-    // 跳转至微信小程序
-    function redirectToMiniProgram(appId) {
-      if (typeof wx !== 'undefined' && wx.miniProgram && wx.miniProgram.navigateTo) {
-        wx.miniProgram.navigateTo({
-          appId: appId,
-          path: 'pages/index/index', // 替换为小程序首页的路径
-          success: function () {
-            console.log('成功跳转至微信小程序');
-          },
-          fail: function (res) {
-            var errorMessage = '跳转至微信小程序失败：' + res.errMsg;
-            alert(errorMessage);
-            // 可以在跳转失败时执行备用操作，如重定向到其他页面
-            window.location.href = 'fallback.html';
-          }
-        });
-      } else {
-        var errorMessage = '微信小程序 API 不可用';
-        alert(errorMessage);
-        // 可以在微信小程序 API 不可用时执行备用操作，如重定向到其他页面
-        window.location.href = 'fallback.html';
-      }
-    }
-
-
   </script>
 </head>
-
 <body onload="redirectBasedOnUserAgent()">
   <h1>重定向页面</h1>
   <p>正在为您重定向到适合您的设备和浏览器的页面...</p>
 </body>
-
 </html>
