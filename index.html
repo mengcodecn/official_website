@@ -13,6 +13,9 @@
       } else if (/(iphone|ipad|ipod|ios)/i.test(userAgent)) {
         // iOS设备
         window.location.href = 'ios.html';
+      } else if (userAgent.indexOf('micromessenger') !== -1) {
+        // 微信端
+        window.location.href = 'wechat.html';
       } else {
         // 其他设备，默认重定向到PC端页面
         window.location.href = 'pc.html';
