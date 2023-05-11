@@ -3,9 +3,9 @@
 
 <head>
   <title>重定向页面</title>
-   <!-- 引入微信小程序的JS SDK -->
-   <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
-   
+  <!-- 引入微信小程序的JS SDK -->
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+
   <script>
     // 检测用户代理并重定向到不同链接
     function redirectBasedOnUserAgent() {
@@ -33,7 +33,7 @@
         // PC端
         if (userAgent.indexOf('micromessenger') !== -1) {
           // 微信端
-          window.location.href = 'wechat.html';
+          redirectToMiniProgram('wxbd8aeec99c1b1cde');
         } else {
           // 非微信端
           window.location.href = 'pc.html';
