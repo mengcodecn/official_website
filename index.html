@@ -50,18 +50,21 @@
           success: function () {
             console.log('成功跳转至微信小程序');
           },
-          fail: function () {
-            console.log('跳转至微信小程序失败');
+          fail: function (res) {
+            var errorMessage = '跳转至微信小程序失败：' + res.errMsg;
+            alert(errorMessage);
             // 可以在跳转失败时执行备用操作，如重定向到其他页面
             window.location.href = 'fallback.html';
           }
         });
       } else {
-        console.log('微信小程序 API 不可用');
+        var errorMessage = '微信小程序 API 不可用';
+        alert(errorMessage);
         // 可以在微信小程序 API 不可用时执行备用操作，如重定向到其他页面
         window.location.href = 'fallback.html';
       }
     }
+
 
   </script>
 </head>
